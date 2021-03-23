@@ -276,9 +276,9 @@ class PixSampleArena(gym.Env):
 			p.removeBody(self.husky)
 			self.husky = None
 
-		pos = [[0,2], [2,0], [4,2], [2,4]]
-		ori = [-np.pi/2, 0, np.pi/2, np.pi]
-		x = np.random.randint(0,3)
+		pos = [[5, 5]]
+		ori = [np.pi/2, 0, np.pi/2, np.pi]
+		x = np.random.randint(0, len(pos))
 		self.husky = p.loadURDF('rsc/car/car.urdf', [2.5-1*pos[x][0],2.5-1*pos[x][1],0], p.getQuaternionFromEuler([0,0,ori[x]]))
 		#self.husky = p.loadURDF('husky/husky.urdf', [4-1*pos[x][0],4-1*pos[x][1],0], p.getQuaternionFromEuler([0,0,ori[x]]))
 		#self.aruco = p.loadURDF('rsc/aruco/aruco.urdf', [4-1*pos[x][0],4-1*pos[x][1],1.2], p.getQuaternionFromEuler([1.5707,0,ori[x]]))
